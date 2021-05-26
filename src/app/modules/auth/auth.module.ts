@@ -4,21 +4,21 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { AuthRoutingModule } from './auth-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
-import { HomeComponent } from './components/home/home.comp';
-import { ListingComponent } from './components/listing/listing.comp';
-import { PostAdComponent } from './components/post-ad/post-ad.comp';
+import { LoginComponent } from './components/login/login.comp';
+import { SignupComponent } from './components/signup/signup.comp';
+
 @NgModule({
-  declarations: [PostAdComponent, HomeComponent, ListingComponent],
+  declarations: [LoginComponent, SignupComponent],
   imports: [
     IonicModule,
     CommonModule,
     ReactiveFormsModule,
-    HomePageRoutingModule,
+    AuthRoutingModule,
     IonicStorageModule.forRoot(),
     SharedModule
   ]
 })
-export class HomeModule {}
+export class AuthModule {}

@@ -1,0 +1,21 @@
+<ion-app>
+  <ion-page class="ion-page" id="main-content">
+    <app-header></app-header>
+    <ion-content class="ion-padding">
+      <div class="p-3">
+        <form [formGroup]="loginForm" (ngSubmit)='userLogin()'>
+          <div class="mb-3">
+            <input type="text" class="form-control" formControlName="email" placeholder="Email">
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" formControlName="email" placeholder="Password">
+          </div>
+          <div class="mb-3 text-right">
+            <button type="submit" class="btn btn-success">Login</button>
+          </div>
+        </form>
+      </div>
+    </ion-content>
+    <app-footer></app-footer>
+  </ion-page>
+</ion-app>

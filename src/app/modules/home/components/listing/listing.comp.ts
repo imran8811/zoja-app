@@ -4,10 +4,10 @@ import { AlertController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.html'
+  selector: 'app-listing',
+  templateUrl: 'listing.html'
 })
-export class HomeComponent implements OnInit {
+export class ListingComponent implements OnInit {
 
   constructor(
     private storage: Storage,
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   async ngOnInit() {}
 
   async findMatch(matchType){
-    this.router.navigate(['listing']);
+    this.router.navigate(['/listing']);
   }
 
 }
