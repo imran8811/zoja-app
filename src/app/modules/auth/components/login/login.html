@@ -5,10 +5,19 @@
       <div class="p-3">
         <form [formGroup]="loginForm" (ngSubmit)='userLogin()'>
           <div class="mb-3">
-            <input type="text" class="form-control" formControlName="email" placeholder="Email">
+            <input type="text" class="form-control" formControlName="email" placeholder="Email" [ngClass]="{ 'is-invalid': form.email.errors && (form.email.touched || form.email.dirty) }">
+            <div *ngIf="form.email.errors && (form.email.touched || form.email.dirty)" class="text-danger">
+              <div *ngIf="form.email.errors.required">Email Required</div>
+            </div>
           </div>
           <div class="mb-3">
-            <input type="password" class="form-control" formControlName="email" placeholder="Password">
+            <input type="password" class="form-control" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': form.password.errors && (form.password.touched || form.password.dirty) }">
+            <div *ngIf="form.password.errors && (form.password.touched || form.password.dirty)" class="text-danger">
+              <div *ngIf="form.password.errors.required">Password Required</div>
+            </div>
+          </div>
+          <div class="mb-3" *ngIf="invalidCredentials">
+            <p class="text-danger">Invalid Email/Password</p>
           </div>
           <div class="mb-3 text-right">
             <button type="submit" class="btn btn-success">Login</button>

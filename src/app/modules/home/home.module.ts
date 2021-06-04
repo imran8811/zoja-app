@@ -9,9 +9,9 @@ import { SharedModule } from '../shared/shared.module';
 
 import { HomeComponent } from './components/home/home.comp';
 import { ListingComponent } from './components/listing/listing.comp';
-import { PostAdComponent } from './components/post-ad/post-ad.comp';
+import { CreateProfileComponent } from './components/create-profile/create-profile.comp';
 @NgModule({
-  declarations: [PostAdComponent, HomeComponent, ListingComponent],
+  declarations: [CreateProfileComponent, HomeComponent, ListingComponent],
   imports: [
     IonicModule,
     CommonModule,

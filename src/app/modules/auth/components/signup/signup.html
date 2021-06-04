@@ -5,13 +5,28 @@
       <div class="p-3">
         <form [formGroup]="signUpForm" (ngSubmit)='userSignup()'>
           <div class="mb-3">
-            <input type="text" class="form-control" formControlName="fullName" placeholder="Full Name" />
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" formControlName="email" [ngClass]="{ 'is-invalid': form.email.errors && (form.email.touched || form.email.dirty) }" />
+            <div *ngIf="form.email.errors && (form.email.touched || form.email.dirty)" class="text-danger">
+              <div *ngIf="form.email.errors.required">Email Required</div>
+              <div *ngIf="form.email.errors.email">Invalid Email</div>
+            </div>
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" formControlName="email" placeholder="Email" />
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password" minlength='8' [ngClass]="{ 'is-invalid': form.password.errors && (form.password.touched || form.password.dirty) }" />
+            <div *ngIf="form.password.errors && (form.password.touched || form.password.dirty)" class="text-danger">
+              <div *ngIf="form.password.errors.required">Password Required</div>
+              <div *ngIf="form.password.errors.minlength">Min password length 8 characters</div>
+            </div>
           </div>
           <div class="mb-3">
-            <input type="password" class="form-control" formControlName="password" placeholder="Password" />
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" class="form-control" id="confirm-password" formControlName="confirmPassword" [ngClass]="{ 'is-invalid': !passwordMatch && form.confirmPassword.errors && (form.confirmPassword.touched || form.confirmPassword.dirty) }" />
+            <div *ngIf="form.confirmPassword.errors && (form.confirmPassword.touched || form.confirmPassword.dirty)" class="text-danger">
+              <div *ngIf="form.confirmPassword.errors.required">Confirm password required</div>
+            </div>
+            <div *ngIf="!passwordMatch" class="text-danger">Confirm password doesn't match</div>
           </div>
           <div class="mb-3 text-right">
             <button type="submit" class="btn btn-success">Signup</button>

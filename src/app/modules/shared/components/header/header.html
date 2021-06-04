@@ -31,9 +31,10 @@
       </ion-buttons>
       <ion-title>Header</ion-title>
       <ul>
-        <li><a routerLink="/auth/login">Login</a></li>
-        <li><a routerLink="/auth/signup">Signup</a></li>
-        <li><a routerLink="/post-ad">Create Profile</a></li>
+        <li *ngIf="!logggedIn"><a routerLink="/auth/login">Login</a></li>
+        <li *ngIf="!logggedIn"><a routerLink="/auth/signup">Signup</a></li>
+        <li><a routerLink="/create-profile">Create Profile</a></li>
+        <li *ngIf="logggedIn"><a routerLink="#" (click)="userLogout()">Logout</a></li>
       </ul>
     </ion-toolbar>
   </ion-header>

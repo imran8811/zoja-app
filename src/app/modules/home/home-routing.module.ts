@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.comp';
-import { PostAdComponent } from './components/post-ad/post-ad.comp';
+import { CreateProfileComponent } from './components/create-profile/create-profile.comp';
 import { ListingComponent } from './components/listing/listing.comp';
 
 const routes: Routes = [
@@ -15,8 +15,8 @@ const routes: Routes = [
     component: ListingComponent
   },
   {
-    path: 'post-ad',
-    component: PostAdComponent
+    path: 'create-profile',
+    component: CreateProfileComponent
   }
 
 ];

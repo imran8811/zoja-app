@@ -4,24 +4,28 @@ import { AlertController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { ProfileService } from 'src/app/services';
+import { IUserProfile } from 'src/app/models';
+
 @Component({
-  selector: 'app-post-ad',
-  templateUrl: 'post-ad.html'
+  selector: 'app-create-profile',
+  templateUrl: 'create-profile.html'
 })
 
-export class PostAdComponent implements OnInit {
-  createAdForm: FormGroup;
+export class CreateProfileComponent implements OnInit {
+  createProfileForm: FormGroup;
 
   constructor(
     private storage: Storage,
     private alertcontroller: AlertController,
     private route: ActivatedRoute,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private profileservice: ProfileService
   ) {}
 
   async ngOnInit() {
-    this.createAdForm = this.fb.group({
+    this.createProfileForm = this.fb.group({
       fullName: ['', Validators.required],
       age : ['', Validators.required],
       education : ['', Validators.required],
@@ -34,6 +38,9 @@ export class PostAdComponent implements OnInit {
     });
   }
 
-  createAd(){}
+  createProfile = async () => {
+    const response = await this.profileservice.createProfile(this.createProfileForm.value) as IUserProfile;
+    console.log(response);
+  }
 
 }

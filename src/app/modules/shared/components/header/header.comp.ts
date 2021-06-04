@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { Router } from '@angular/router';
 import { AlertController, MenuController } from '@ionic/angular';
 
 @Component({
@@ -8,26 +9,24 @@ import { AlertController, MenuController } from '@ionic/angular';
 })
 export class HeaderComponent {
 
+  logggedIn = false;
+
   constructor(
     private storage: Storage,
-    private alertcontroller: AlertController,
-    private menu: MenuController
+    private router: Router
   ) {
-    // this.openFirst();
+    this.isLoggedIn();
   }
 
-  // openFirst() {
-  //   this.menu.enable(true, 'first');
-  //   this.menu.open('first');
-  // }
+  async isLoggedIn() {
+    this.storage.create();
+    const isLoggedIn = await this.storage.get('loggedIn') === 'true'? true : false;
+    this.logggedIn = isLoggedIn;
+  }
 
-  // openEnd() {
-  //   this.menu.open('end');
-  // }
-
-  // openCustom() {
-  //   this.menu.enable(true, 'custom');
-  //   this.menu.open('custom');
-  // }
+  userLogout = async () => {
+    this.storage.clear();
+    this.router.navigate(['/']);
+  }
 
 }
