@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       this.invalidCredentials = true;
     } else if(res.type === 'success') {
       this.storage.create();
-      this.storage.set('loggedIn', 'true');
+      this.storage.set('isLoggedIn', 'true');
       this.router.navigate(['/listing']);
     }
   }

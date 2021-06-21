@@ -20,7 +20,7 @@ export class HeaderComponent {
 
   async isLoggedIn() {
     this.storage.create();
-    const isLoggedIn = await this.storage.get('loggedIn') === 'true'? true : false;
+    const isLoggedIn = await this.storage.get('isLoggedIn') === 'true'? true : false;
     this.logggedIn = isLoggedIn;
   }
 
