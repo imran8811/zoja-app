@@ -2,47 +2,46 @@
   <ion-page class="ion-page" id="main-content">
     <app-header></app-header>
     <ion-content class="ion-padding">
+      <div class="mb-3">
+        <a routerLink="" (click)="searchFilter = !searchFilter">Filters</a>
+        <form [formGroup]="filterForm" *ngIg="searchFilter">
+          <div class="mb-3">
+            <label for="bride"><input type="radio" id="bride">Bride</label>
+            <label for="groom"><input type="radio" id="groom">Groom</label>
+          </div>
+        </form>
+      </div>
       <div class="col-12 mb-3 match-listing">
-        <div class="list-item">
-          <img src="/resources/icon.png" alt="main image">
-          <div class="mt-2">
-            <ul>
-              <li>
-                <span>Name:</span>
-                <span>Name:</span>
-              </li>
-              <li>
-                <span>Name:</span>
-                <span>Name:</span>
-              </li>
-              <li>
-                <span>Name:</span>
-                <span>Name:</span>
-              </li>
-              <li>
-                <span>Name:</span>
-                <span>Name:</span>
-              </li>
-              <li>
-                <span>Name:</span>
-                <span>Name:</span>
-              </li>
-              <li>
-                <span>Name:</span>
-                <span>Name:</span>
-              </li>
-              <li>
-                <span>Name:</span>
-                <span>Name:</span>
-              </li>
-              <li>
-                <span>Name:</span>
-                <span>Name:</span>
-              </li>
-            </ul>
+        <div class="details-card">
+          <div class="user-image">
+            <ion-img src="../assets/images/splash.png"></ion-img>
           </div>
           <div class="mt-2">
-            <a href="#">View Number</a>
+            <ul class="user-details row">
+              <li class="col-6">
+                <span>Name: </span>
+                <span>Mohd Imran</span>
+              </li>
+              <li class="col-6">
+                <span>Age: </span>
+                <span>33</span>
+              </li>
+              <li class="col-6">
+                <span>Education: </span>
+                <span>Bsc Computer Science</span>
+              </li>
+              <li class="col-6">
+                <span>Height: </span>
+                <span>5'8"</span>
+              </li>
+              <li class="col-6">
+                <span>Status: </span>
+                <span>Divorced with kids</span>
+              </li>
+            </ul>
+            <div class="col-12 text-right">
+              <button class="btn btn-link">View Number</button>
+            </div>
           </div>
         </div>
       </div>
