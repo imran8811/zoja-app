@@ -1,4 +1,5 @@
 export interface IUserProfile {
+  gender: string;
   fullName: string;
   age: number;
   education: string;
@@ -11,6 +12,7 @@ export interface IUserProfile {
 }
 
 export class UserProfile implements IUserProfile {
+  gender = '';
   fullName = '';
   age = 0;
   education = '';

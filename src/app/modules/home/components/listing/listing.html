@@ -11,32 +11,32 @@
           </div>
         </form>
       </div>
-      <div class="col-12 mb-3 match-listing">
+      <div class="col-12 mb-3 match-listing" *ngFor="let profile of profileListing">
         <div class="details-card">
           <div class="user-image">
-            <ion-img src="../assets/images/splash.png"></ion-img>
+            <!-- <ion-img src="../assets/images/splash.png"></ion-img> -->
           </div>
           <div class="mt-2">
             <ul class="user-details row">
               <li class="col-6">
                 <span>Name: </span>
-                <span>Mohd Imran</span>
+                <span>{{profile.fullName}}</span>
               </li>
               <li class="col-6">
                 <span>Age: </span>
-                <span>33</span>
+                <span>{{profile.age}}</span>
               </li>
               <li class="col-6">
                 <span>Education: </span>
-                <span>Bsc Computer Science</span>
+                <span>{{profile.education}}</span>
               </li>
               <li class="col-6">
                 <span>Height: </span>
-                <span>5'8"</span>
+                <span>{{profile.feet}}'{{profile.inch}}"</span>
               </li>
               <li class="col-6">
                 <span>Status: </span>
-                <span>Divorced with kids</span>
+                <span>{{profile.status}}</span>
               </li>
             </ul>
             <div class="col-12 text-right">

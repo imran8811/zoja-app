@@ -18,9 +18,4 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {}
 
-  async findMatch(matchType){
-    console.log(matchType);
-    this.router.navigate(['listing']);
-  }
-
 }

@@ -13,10 +13,15 @@ export class HeaderComponent {
 
   constructor(
     private storage: Storage,
-    private router: Router
+    private router: Router,
+    private menu: MenuController
   ) {
     this.isLoggedIn();
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
   }
+
+
 
   async isLoggedIn() {
     this.storage.create();
@@ -26,7 +31,8 @@ export class HeaderComponent {
 
   userLogout = async () => {
     this.storage.clear();
+    this.logggedIn = false;
     this.router.navigate(['/']);
-  }
+  };
 
 }

@@ -10,3 +10,5 @@ export const GET_PROFILE = baseRoute+'/profile/:id';
 export const UPDATE_PROFILE = baseRoute+'/profile/update/:id';
 export const DELETE_PROFILE = baseRoute+'/profile/delete/:id';
 
+export const SEARCH = baseRoute+'/profile/search';
+

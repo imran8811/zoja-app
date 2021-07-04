@@ -5,10 +5,10 @@
     <ion-content class="ion-padding">
       <div class="row">
         <div class="col-xs-6">
-          <button type="button" class="btn btn-success" (click)="findMatch('bride')">Find Bride</button>
+          <button type="button" class="btn btn-success" [routerLink]="['/listing']" [queryParams]="{searchType: 'female'}">Find Bride</button>
         </div>
         <div class="col-xs-6">
-          <button type="button" class="btn btn-primary" (click)="findMatch('groom')">Find Groom</button>
+          <button type="button" class="btn btn-primary" [routerLink]="['/listing']" [queryParams]="{searchType: 'male'}">Find Groom</button>
         </div>
       </div>
     </ion-content>

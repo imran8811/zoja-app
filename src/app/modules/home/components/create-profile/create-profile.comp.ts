@@ -26,6 +26,7 @@ export class CreateProfileComponent implements OnInit {
 
   async ngOnInit() {
     this.createProfileForm = this.fb.group({
+      gender: ['female', Validators.required],
       fullName: ['', Validators.required],
       age : ['', Validators.required],
       education : ['', Validators.required],
