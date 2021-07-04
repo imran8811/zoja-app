@@ -5,12 +5,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { SearchService } from 'src/app/services';
 import { ISearchResults } from 'src/app/models';
+import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-listing',
   templateUrl: 'listing.html'
 })
 export class ListingComponent implements OnInit {
   profileListing;
+  searchFilter = false;
+  filterForm: FormGroup;
 
   constructor(
     private storage: Storage,
