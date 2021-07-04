@@ -31,7 +31,11 @@
     "@ionic/storage-angular": "^3.0.6",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "@angular/cli": "~11.2.4",
+    "@angular/compiler": "~11.2.0",
+    "@angular/compiler-cli": "~11.2.0",
+    "typescript": "~4.0.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.4",
@@ -63,8 +67,7 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
-    "ts-node": "~8.3.0",
-    "typescript": "~4.0.2"
+    "ts-node": "~8.3.0"
   },
   "description": "An Ionic project"
 }
