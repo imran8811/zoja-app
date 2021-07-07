@@ -9,11 +9,11 @@ import { SharedModule } from '../shared/shared.module';
 
 import { HomeComponent } from './components/home/home.comp';
 import { ListingComponent } from './components/listing/listing.comp';
-import { CreateProfileComponent } from './components/create-profile/create-profile.comp';
+import { ListProfileComponent } from './components/list-profile/list-profile.comp';
 import { HomeSliderComponent } from './components/slider/slider.comp';
 
 @NgModule({
-  declarations: [CreateProfileComponent, HomeComponent, ListingComponent, HomeSliderComponent],
+  declarations: [ListProfileComponent, HomeComponent, ListingComponent, HomeSliderComponent],
   imports: [
     IonicModule,
     CommonModule,

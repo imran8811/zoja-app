@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginComponent } from './components/login/login.comp';
-import { SignupComponent } from './components/signup/signup.comp';
+import {
+  LoginComponent,
+  SignupComponent,
+  ForgotPassComponent
+} from './components';
 
 const routes: Routes = [
   {
@@ -12,6 +15,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPassComponent
   }
 ];
 
@@ -19,4 +26,11 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+
 export class AuthRoutingModule {}
+
+export const COMPONENTS_LIST  = [
+  LoginComponent,
+  SignupComponent,
+  ForgotPassComponent
+];

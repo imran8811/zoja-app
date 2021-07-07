@@ -1,4 +1,5 @@
-const baseRoute = 'http://localhost:3000/api';
+// const baseRoute = 'http://localhost:3000/api';
+const baseRoute = 'https://myshadi.herokuapp.com/api';
 
 //authentication
 export const USER_SIGNUP = baseRoute+'/user/signup';

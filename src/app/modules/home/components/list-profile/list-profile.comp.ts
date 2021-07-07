@@ -8,11 +8,11 @@ import { ProfileService } from 'src/app/services';
 import { IUserProfile } from 'src/app/models';
 
 @Component({
-  selector: 'app-create-profile',
-  templateUrl: 'create-profile.html'
+  selector: 'app-list-profile',
+  templateUrl: 'list-profile.html'
 })
 
-export class CreateProfileComponent implements OnInit {
+export class ListProfileComponent implements OnInit {
   createProfileForm: FormGroup;
 
   constructor(
